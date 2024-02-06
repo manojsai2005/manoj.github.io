@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        portfolio
+    </title>
+    <link rel="stylesheet" href="assignment.css">
+    <style>
+        body {
+            transition: background-color 0.3s ease;
+        }
+
+        body.c1 {
+            background-color: #fff;
+        }
+
+        body.c2 {
+            background-color: gray;
+        }
+
+        .cont1 {
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <nav>
+                <ul class="stul">
+                    <li class="stli"><a class="stli" href="#aboutme">About me</a></li>
+                    <li class="stli"><a class="stli" href="#edubgnd">Educational Background</a></li>
+                    <li class="stli"><a class="stli" href="#achievements">Achievements</a></li>
+                    <li class="stli"><a class="stli" href="#skills">Skills</a></li>
+                    <li class="stli" onclick="toggleBackground()">Toggle Background</li>
+                    <li class="stli"><a class="stli" href="#blog1">Blog-1</a></li>
+                    <li class="stli"><a class="stli" href="#blog2">Blog-2</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div>
+        <div class="cont">
+            <div class="cont1">Hii everyone this is <span class="name">Manojsaikumar</span></div>
+        </div>
+    </div>
+    <img src="profilrphoto.jpeg" alt="profile photo">
+    <div id="aboutme" class="blogcont" style="margin-bottom: 150px; margin-top: 150px;">
+        <div class="blog">
+            <h1 style="font-size: 60px; text-decoration: none;">About Me</h1>
+            <ul style="font-size: 30px;">
+                <li>My name is Manojsaikumar Kondaveti</li>
+                <li>I am a student from IIIT Hyderabad (2023-2027 batch)</li>
+                <li>I find great pleasure in engaging in the sport of cricket</li>
+                <li>I really love watching movies, also cricket matches</li>
+                <li>I am very passionate about web development</li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <div id="edubgnd" class="container" style="margin-bottom: 150px; margin-top: 150px;">
+        <div class="box">
+            <h1 style="font-size: 60px; text-decoration: none;">Education background</h1>
+            <ul style="font-size: 30px;">
+                <li>I have studied my class 10th in Keshava Reddy school in the year 2021</li>
+                <li>I have studied my class 12th in Narayana college in the year 2023</li>
+                <li>At present, I am studying at IIIT Hyderabad in the CSE branch</li>
+            </ul>
+        </div>
+    </div>
+    <div id="achievements" class="blogcont" style="margin-bottom: 150px; margin-top: 150px;">
+        <div class="blog">
+            <h1 style="font-size: 60px; text-decoration: none;">Achievements</h1>
+            <ul style="font-size: 30px;">
+                <li>In my 10th boards, I have secured 598/600 </li>
+                <li>In my 12th board exams, I have secured 97% </li>
+                <li>I have secured AIR 741 in JEE MAINS</li>
+                <li>I have secured AIR 1722 in JEE ADVANCED</li>
+            </ul>
+        </div>
+    </div>
+    <div id="skills" class="container" style="margin-bottom: 150px; margin-top: 150px;">
+        <div class="box">
+            <h1 style="font-size: 60px; text-decoration: none;">Skills</h1>
+            <ul style="font-size: 30px;">
+                <li>C, C++</li>
+                <li>HTML, CSS, JAVASCRIPT</li>
+            </ul>
+        </div>
+    </div>
+    <div id="blog1" class="blogcont">
+        <div class="blog">
+            <h1 style="font-size: 60px">Placeholder Blog 1</h1>
+            <a href="blog1.html" target="_blank">click here to see the blog1 </a>
+        </div>
+    </div>
+    <div id="blog2" class="container">
+        <div class="box">
+            <h1 style="font-size: 60px">Placeholder Blog 2</h2>
+                <a href="blog2.html" target="_blank">click here to see the blog2</a>
+        </div>
+    </div>
+    <div>
+        <button onclick = "location.href='insta_icon.png'" target="_blank">hyper link</button>
+    </div>
+    <script>
+        function toggleBackground() {
+            const body = document.body;
+            body.classList.toggle('c1');
+            body.classList.toggle('c2');
+
+        }
+
+        function openNewPage() {
+            window.open('blog.html', '_blank');
+        }
+    </script>
+
+    <a class="fixed" href="https://www.instagram.com/its_me_manojkondaveti/" title="Instagram">
+        <img src="insta_icon.png" alt="Instagram Icon">
+    </a>
+    <a class="fixed1" href="mailto:kondavetimanojsaikumar@gmail.com" title="email">
+        <img src="email_icon.png" alt="email Icon">
+    </a>
+</body>
+
+</html>

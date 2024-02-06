@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .blog-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #3d3d3d;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #666666;
+        }
+
+        .like-button {
+            padding: 10px 20px;
+            cursor: pointer;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            transition: background-color 0.3s;
+            font-size: 14px;
+        }
+
+        .like-button.unliked {
+            background-color: #555555;
+        }
+
+        #like-count-blog1 {
+            font-weight: bold;
+            margin-left: 5px;
+            color: #3498db;
+        }
+
+        .comments-container {
+            margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #3d3d3d;
+        }
+
+        .comment-box {
+            border: 1px solid #dddddd;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            color: #555555;
+        }
+
+        textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="blog-container" id="blog2">
+        <h1 style="font-size: 60px">Exploring the World of Web Development</h1>
+        <p>
+            Web development is more than just coding; it's an art of creating interactive and visually appealing
+            experiences
+            on the internet. From the front-end to the back-end, each component plays a crucial role in shaping
+            the online
+            world we interact with every day.
+        </p>
+        <p>
+            As a web development enthusiast, I find joy in crafting responsive and user-friendly websites. Whether
+            it's
+            designing intuitive user interfaces or implementing robust server-side logic, the dynamic nature of
+            web
+            development keeps me engaged and excited.
+        </p>
+        <p>
+            Embracing technologies like HTML, CSS, JavaScript, and frameworks like React and Node.js, I navigate
+            through
+            the ever-evolving landscape of web development. It's not just about writing code; it's about solving
+            problems,
+            creating solutions, and constantly learning in this fast-paced digital era.
+        </p>
+        <button class="like-button" onclick="toggleLike('blog2')">Like</button>
+        <span id="like-count-blog2">0</span>
+        <div class="comments-container" id="comment-container-blog2">
+            <h3>Comments:</h3>
+            <div class="comment-box">comment1 of the blog</div>
+            <div class="comment-box">comment2 of the blog</div>
+        </div>
+    </div>
+
+    <script>
+        function toggleLike(blogId) {
+            const likeButton = document.querySelector(`#${blogId} .like-button`);
+            const likeCountElement = document.getElementById(`like-count-${blogId}`);
+            let likeCount = parseInt(likeCountElement.textContent);
+    
+            if (likeButton.classList.contains('unliked')) {
+                likeCount++;
+                likeButton.classList.remove('unliked');
+            } else {
+                likeCount--;
+                likeButton.classList.add('unliked');
+            }
+    
+            likeCountElement.innerHTML = likeCount;
+            localStorage.setItem(blogId, likeCount);
+        }
+    
+        function initializeLikes() {
+            const blogIds = ['blog2'];
+            blogIds.forEach(blogId => {
+                const likeCountElement = document.getElementById(`like-count-${blogId}`);
+                const storedLikes = localStorage.getItem(blogId);
+                likeCountElement.innerText = storedLikes || '0';
+                const likeButton = document.querySelector(`#${blogId} .like-button`);
+                if (parseInt(storedLikes) > '0') {
+                    likeButton.classList.remove('unliked');
+                } else {
+                    likeButton.classList.add('unliked');
+                }
+            });
+        }
+        initializeLikes();
+    </script>
+    
+
+</body>
+
+</html>
